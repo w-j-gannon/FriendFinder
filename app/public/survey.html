@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Friend Finder</title>
-    
-    <!-- Bootstrap Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    
-    <!-- Font Awesome Glyphicons -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- font awesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- JS libraries-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
 </head>
     
@@ -24,24 +25,26 @@
             <hr>
             <h2 class="text-muted">Take this short quiz to find your real life best friend!</h2>
             <br>
+            <h2 class="text-muted">Rank each quote between 1 for <em>strongly disagree</em> and 5 for <em>strongly agree.</em></h2>
 
         </div>
 
         <!-- Info card -->
-        
         <div class="card">
             <div class="card-header">
                 <h1>Enter Your Info</h1>
             </div>
             <div class="card-body">
-                
-                <div class="input-group mb-5">
-                    <label class="text-muted" for="name">Name (required)</label>
-                    <input type="text" id="name" class="form-control mb-5" placeholder="John Smith" required="">
+                <!-- name field -->
+                <label for="name">Name (required)</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="name" aria-describedby="basic-addon3" placeholder="Art Vandalay">
                 </div>
-                <div class="input-group mb-5">
-                    <label class="text-muted" for="photo">Link to Photo (required)</label>
-                    <input type="text" id="photo" class="form-control" placeholder="http://images.google/mypic" required="">
+
+                <!-- link field -->
+                <label for="photo">Your vanity URL</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="photo" aria-describedby="basic-addon3" placeholder="http://images.google/mypic">
                 </div>
             </div>
         </div>
@@ -49,12 +52,12 @@
         <hr>
 
         <!-- 10 Questions -->
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 1
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"Looking at cleavage is like looking at the sun. You don’t stare at it. It’s too risky. You get a sense of it and then you look away."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q1">
@@ -69,12 +72,12 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 2
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"My life is the complete opposite of everything I want it to be. Every instinct I have, in every aspect of life, be it something to wear, something to eat - it's all been wrong."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q2">
@@ -89,12 +92,12 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 3
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"There's nothing more pathetic than a grown man who’s afraid of a woman."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q3">
@@ -109,12 +112,12 @@
             </div>
         </div>
     
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 4
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"I’ll go, if I don’t have to talk."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q4">
@@ -129,12 +132,12 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 5
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"When you control the mail, you control information."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q5">
@@ -149,12 +152,12 @@
             </div>
         </div>
     
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 6
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"If you can’t say something bad about a relationship you shouldn’t say anything at all."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q6">
@@ -169,12 +172,12 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 7
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"I’ve never been much for credos."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q7">
@@ -189,12 +192,12 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 8
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"People don’t turn down money. It’s what separates us from the animals."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q8">
@@ -209,12 +212,12 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 9
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"My face is my livelihood, my allure, my twinkle! Everything I have I owe to this face."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q9">
@@ -229,12 +232,12 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header text-muted">
                 Question 10
             </div>
             <div class="card-body">
-                <div class="card-title h3">Some question about your personality</div>
+                <div class="card-title h4">"I'm not a lesbian! I hate men, but I'm not a lesbian."</div>
                 <div class="form-group">
                         
                     <select class="form-control" id="q10">
