@@ -60,7 +60,7 @@
                 <div class="card-title h4">"Looking at cleavage is like looking at the sun. You don’t stare at it. It’s too risky. You get a sense of it and then you look away."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q1">
+                    <select class="form-control chosen-answer" id="q1">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -80,7 +80,7 @@
                 <div class="card-title h4">"My life is the complete opposite of everything I want it to be. Every instinct I have, in every aspect of life, be it something to wear, something to eat - it's all been wrong."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q2">
+                    <select class="form-control chosen-answer" id="q2">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -100,7 +100,7 @@
                 <div class="card-title h4">"There's nothing more pathetic than a grown man who’s afraid of a woman."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q3">
+                    <select class="form-control chosen-answer" id="q3">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -120,7 +120,7 @@
                 <div class="card-title h4">"I’ll go, if I don’t have to talk."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q4">
+                    <select class="form-control chosen-answer" id="q4">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -140,7 +140,7 @@
                 <div class="card-title h4">"When you control the mail, you control information."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q5">
+                    <select class="form-control chosen-answer" id="q5">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -160,7 +160,7 @@
                 <div class="card-title h4">"If you can’t say something bad about a relationship you shouldn’t say anything at all."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q6">
+                    <select class="form-control chosen-answer" id="q6">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -180,7 +180,7 @@
                 <div class="card-title h4">"I’ve never been much for credos."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q7">
+                    <select class="form-control chosen-answer" id="q7">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -200,7 +200,7 @@
                 <div class="card-title h4">"People don’t turn down money. It’s what separates us from the animals."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q8">
+                    <select class="form-control chosen-answer" id="q8">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -220,7 +220,7 @@
                 <div class="card-title h4">"My face is my livelihood, my allure, my twinkle! Everything I have I owe to this face."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q9">
+                    <select class="form-control chosen-answer" id="q9">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -240,7 +240,7 @@
                 <div class="card-title h4">"I'm not a lesbian! I hate men, but I'm not a lesbian."</div>
                 <div class="form-group">
                         
-                    <select class="form-control" id="q10">
+                    <select class="form-control chosen-answer" id="q10">
                         <option selected value="">Choose an Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -278,15 +278,15 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">×</button>
-            <h2 class="modal-title"><strong>Best Match</strong></h2>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h2 class="modal-title"><strong>Best Match</strong></h2>
             </div>
             <div class="modal-body">
-            <h2 id="match-name"></h2>
-            <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                <h2 id="match-name"></h2>
+                <img id="match-img" src="https://vignette.wikia.nocookie.net/seinfeld/images/5/5b/Jacopo7.jpg/revision/latest/scale-to-width-down/250?cb=20120204124331" alt="Your Match's Picture">
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     
@@ -294,61 +294,61 @@
     </div>
     
     <script type="text/javascript">
-        
-    
-        // Capture the form inputs
+        // on submit, post info to api/friends as object userData
+
+        // Submit button
         $("#submit").on("click", function(event) {
-        event.preventDefault();
+            event.preventDefault();
     
-        // Form validation
-        function validateForm() {
-            var isValid = true;
-            $(".form-control").each(function() {
-            if ($(this).val() === "") {
-                isValid = false;
-            }
-            });
+            // Form validation
+            function validateForm() {
+                var isValid = true;
+                $(".form-control").each(function() {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
     
-            $(".chosen-select").each(function() {
+                $(".chosen-answer").each(function() {
     
-            if ($(this).val() === "") {
-                isValid = false;
-            }
-            });
-            return isValid;
-        }
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            };
     
-        // If all required fields are filled
-        if (validateForm()) {
-            // Create an object for the user"s data
-            var userData = {
-            name: $("#name").val(),
-            photo: $("#photo").val(),
-            scores: [
-                $("#q1").val(),
-                $("#q2").val(),
-                $("#q3").val(),
-                $("#q4").val(),
-                $("#q5").val(),
-                $("#q6").val(),
-                $("#q7").val(),
-                $("#q8").val(),
-                $("#q9").val(),
-                $("#q10").val()
-            ]
+            // If all required fields are filled
+            if (validateForm()) {
+                // Create an object for the user's data
+                var userData = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
             };
     
             // AJAX post the data to the friends API.
             $.post("/api/friends", userData, function(data) {
     
-            // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-            $("#match-name").text(data.name);
-            $("#match-img").attr("src", data.photo);
+                // take match data from response for modal.
+                $("#match-name").text(data.name);
+                $("#match-img").attr("src", data.photo);
     
-            // Show the modal with the best match
-            $("#results-modal").modal("toggle");
-    
+                // Show the modal with the best match
+                $("#results-modal").modal("toggle");
             });
+
         } else {
             alert("Please fill out all fields before submitting!");
         }
