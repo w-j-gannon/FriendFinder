@@ -10,7 +10,7 @@
     <!-- font awesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- JS libraries-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
@@ -42,9 +42,9 @@
                 </div>
 
                 <!-- link field -->
-                <label for="photo">Your vanity URL</label>
+                <label for="photo">Link to your photo (required)</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="photo" aria-describedby="basic-addon3" placeholder="http://images.google/mypic">
+                    <input type="url" class="form-control" id="photo" aria-describedby="basic-addon3" placeholder="http://images.google/mypic">
                 </div>
             </div>
         </div>
@@ -294,12 +294,13 @@
     </div>
     
     <script type="text/javascript">
-        // on submit, post info to api/friends as object userData
+        // on submit, post info to api/friends as object userData and bring up modal
 
         // Submit button
         $("#submit").on("click", function(event) {
             event.preventDefault();
-    
+            console.log("submitted");
+
             // Form validation
             function validateForm() {
                 var isValid = true;
@@ -322,36 +323,39 @@
             if (validateForm()) {
                 // Create an object for the user's data
                 var userData = {
-                name: $("#name").val(),
-                photo: $("#photo").val(),
-                scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val()
-                ]
-            };
-    
-            // AJAX post the data to the friends API.
-            $.post("/api/friends", userData, function(data) {
-    
-                // take match data from response for modal.
-                $("#match-name").text(data.name);
-                $("#match-img").attr("src", data.photo);
-    
-                // Show the modal with the best match
-                $("#results-modal").modal("toggle");
-            });
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                    ]
+                };
 
-        } else {
-            alert("Please fill out all fields before submitting!");
-        }
+                console.log(userData);
+    
+                // AJAX post the data to the friends API.
+                $.post("/api/friends", userData, function(data) {
+        
+                    // take match data from response for modal.
+                    $("#match-name").text(data.name);
+                    $("#match-img").attr("src", data.photo);
+        
+                    // Show the modal with the best match
+                    $("#results-modal").modal("toggle");
+                    console.log(data);
+                });
+
+            } else {
+                alert("Please fill out all fields before submitting!");
+            }
         });
     </script>
     
